@@ -4,7 +4,7 @@ React component for fancy number transitions.
 
 [Live demo](http://javierbyte.github.io/react-number-easing/)
 
-![react-number-easing screenshot](assets/number-easing.gif)
+![react-number-easing screenshot](assets/number-easing-infinite.gif)
 
 ## Installation
 
