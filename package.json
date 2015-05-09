@@ -1,0 +1,22 @@
+{
+  "name": "react-number-easing",
+  "version": "0.0.1",
+  "description": "React component for fancy transition for numbers.",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepublish": "mkdir -p dist && babel src/index.jsx -u -o dist/index.js --stage 1",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "component",
+    "number",
+    "easing"
+  ],
+  "author": "javierbyte",
+  "license": "ISC",
+  "dependencies": {
+    "eases": "^1.0.6"
+  }
+}
