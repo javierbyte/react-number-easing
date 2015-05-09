@@ -23,7 +23,7 @@ React component for fancy number transitions.
 
 * `value`: The value that you want to display at the end of the animation.
 * `[speed]`: How fast do you want to finish the animation? Defaults to 500ms.
-* `ease`: The easing equation for the animation. Defaults to `quartInOut`. Thanks [mattdesl](https://github.com/mattdesl/eases).
+* `[ease]`: The easing equation for the animation. Defaults to `quartInOut`. You can choose from [mattdesl/eases](https://github.com/mattdesl/eases/blob/master/index.js).
 
 # Build
 
