@@ -10,6 +10,12 @@ var ReactDemoPage = React.createClass({
 		}
 	},
 
+	componentDidMount() {
+		this.setState({
+			number: 1000
+		});
+	},
+
 	onChangeInputValue(event) {
 		this.setState({
 			inputValue: event.target.value
@@ -46,7 +52,7 @@ var ReactDemoPage = React.createClass({
 						<button type='submit'>Update value</button>
 					</div>
 					<div>
-						<button onClick={this.generateRandom}>generate random</button>
+						<button onClick={this.generateRandom}>Random</button>
 					</div>
 				</form>
             </div>
