@@ -25,7 +25,7 @@ var NumberEasing = React.createClass({
     getDefaultProps() {
         return {
             speed: 500,
-            ease: 'quartInOut'
+            ease: 'quintInOut'
         }
     },
 
