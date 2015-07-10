@@ -81,7 +81,7 @@ var NumberEasing = React.createClass({
 
         return (
             <span {...other} className={classes}>
-                {displayValue}
+                {displayValue.toLocaleString()}
             </span>
         );
     }
