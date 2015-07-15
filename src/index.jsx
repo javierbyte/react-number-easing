@@ -7,7 +7,8 @@ var NumberEasing = React.createClass({
     propTypes: {
         value: React.PropTypes.any.isRequired,
         speed: React.PropTypes.number,
-        ease: React.PropTypes.oneOf(Object.keys(eases))
+        ease: React.PropTypes.oneOf(Object.keys(eases)),
+        useLocaleString: React.PropTypes.bool
     },
 
     timeout: null,
@@ -25,7 +26,8 @@ var NumberEasing = React.createClass({
     getDefaultProps() {
         return {
             speed: 500,
-            ease: 'quintInOut'
+            ease: 'quintInOut',
+            useLocaleString: false
         }
     },
 
@@ -73,7 +75,7 @@ var NumberEasing = React.createClass({
     },
 
     render() {
-        var {className, ...other} = this.props;
+        var {className, useLocaleString, ...other} = this.props;
         var {displayValue} = this.state;
 
         var classes = 'react-number-easing';
@@ -81,7 +83,7 @@ var NumberEasing = React.createClass({
 
         return (
             <span {...other} className={classes}>
-                {displayValue.toLocaleString()}
+                {useLocaleString ? displayValue.toLocaleString() : displayValue}
             </span>
         );
     }
