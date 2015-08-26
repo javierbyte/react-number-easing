@@ -8,7 +8,8 @@ var NumberEasing = React.createClass({
         value: React.PropTypes.any.isRequired,
         speed: React.PropTypes.number,
         ease: React.PropTypes.oneOf(Object.keys(eases)),
-        useLocaleString: React.PropTypes.bool
+        useLocaleString: React.PropTypes.bool,
+        delayValue: React.PropTypes.number
     },
 
     timeout: null,
@@ -40,8 +41,15 @@ var NumberEasing = React.createClass({
             previousValue: this.state.displayValue
         });
 
-        this.startAnimationTime = (new Date()).getTime();
-        this.updateNumber();
+        if(!isNaN(parseInt(this.props.delayValue, 10))) {
+            this.delayTimeout = setTimeout(() => {
+                this.startAnimationTime = (new Date()).getTime();
+                this.updateNumber();
+            }, this.props.delayValue);
+        }else{
+            this.startAnimationTime = (new Date()).getTime();
+            this.updateNumber();
+        }
     },
 
     shouldComponentUpdate(nextProps, nextState) {
@@ -72,6 +80,7 @@ var NumberEasing = React.createClass({
 
     componentWillUnmount() {
         clearTimeout(this.timeout);
+        clearTimeout(this.delayTimeout);
     },
 
     render() {
