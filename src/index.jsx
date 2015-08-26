@@ -8,7 +8,8 @@ var NumberEasing = React.createClass({
         value: React.PropTypes.any.isRequired,
         speed: React.PropTypes.number,
         ease: React.PropTypes.oneOf(Object.keys(eases)),
-        useLocaleString: React.PropTypes.bool
+        useLocaleString: React.PropTypes.bool,
+        delayValue: React.PropTypes.number
     },
 
     timeout: null,
