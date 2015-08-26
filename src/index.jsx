@@ -40,8 +40,15 @@ var NumberEasing = React.createClass({
             previousValue: this.state.displayValue
         });
 
-        this.startAnimationTime = (new Date()).getTime();
-        this.updateNumber();
+        if(!isNaN(parseInt(this.props.delayValue, 10))) {
+            setTimeout(() => {
+                this.startAnimationTime = (new Date()).getTime();
+                this.updateNumber();
+            }, this.props.delayValue);
+        }else{
+            this.startAnimationTime = (new Date()).getTime();
+            this.updateNumber();
+        }
     },
 
     shouldComponentUpdate(nextProps, nextState) {
