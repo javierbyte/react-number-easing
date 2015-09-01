@@ -9,16 +9,20 @@ React component for fancy number transitions.
 
 ## Installation
 
-    npm install react-number-easing --save
+```js
+npm install react-number-easing --save
+```
 
 ## Usage.
 
-    var NumberEasing = require('react-number-easing');
+```jsx
+var NumberEasing = require('react-number-easing');
 
-    <NumberEasing
-		value={15}
-		speed={300}
-		ease='quintInOut'/>
+<NumberEasing
+  value={15}
+  speed={300}
+  ease='quintInOut' />
+```
 
 ### Props
 
@@ -31,8 +35,12 @@ React component for fancy number transitions.
 
 If you want to build this from source, you will need babel and less.
 
-	npm install -g babel less
+```js
+npm install -g babel less
+```
 
 And run the pre publish script
 
-	npm run prepublish
+```js
+npm run prepublish
+```
