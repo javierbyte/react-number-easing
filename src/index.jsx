@@ -60,7 +60,7 @@ var NumberEasing = React.createClass({
         var value = parseInt(this.props.value, 10);
 
         var now = (new Date()).getTime();
-        var elapsedTime = (now - this.startAnimationTime);
+        var elapsedTime = Math.min(this.props.speed, (now - this.startAnimationTime));
         var progress = eases[this.props.ease](elapsedTime / this.props.speed);
 
         var currentDisplayValue = Math.round((value - this.state.previousValue) * progress + this.state.previousValue);
