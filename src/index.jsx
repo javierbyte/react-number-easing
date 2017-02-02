@@ -84,7 +84,7 @@ var NumberEasing = React.createClass({
     },
 
     render() {
-        var {className, useLocaleString, ...other} = this.props;
+        var {className, useLocaleString, value, speed, ease, delayValue, ...other} = this.props;
         var {displayValue} = this.state;
 
         var classes = 'react-number-easing';
