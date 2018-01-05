@@ -117,7 +117,7 @@ NumberEasing.propTypes = {
 NumberEasing.defaultProps = {
 	delayValue: 50,
 	ease: 'quintInOut',
-	precision: 0,
+	precision: 2,
 	speed: 500,
 	useLocaleString: false,
 };
