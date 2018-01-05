@@ -1,0 +1,55 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "plugins": [
+    "jsx-a11y",
+    "react"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "arrow-parens": ["error", "always"],
+    "comma-dangle": [1, "always-multiline"],
+    "func-names": "off",
+    "import/no-unresolved": 2,
+    "import/prefer-default-export": 0,
+    "indent": [2, "tab"],
+    "linebreak-style": 0,
+    "no-confusing-arrow": 0,
+    "no-console": 1,
+    "no-nested-ternary": 0,
+    "no-plusplus": 0,
+    "no-restricted-properties": 0,
+    "no-tabs": 0,
+    "no-underscore-dangle": 0,
+    "no-use-before-define": 0,
+    "no-useless-escape": 0,
+    "object-curly-spacing": "off",
+    "one-var": [0, "always"],
+    "prefer-template": 2,
+    "quotes": "off",
+    "radix": 0,
+    "react/forbid-prop-types": 0,
+    "react/jsx-boolean-value": 0,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-first-prop-new-line": [2, "multiline"],
+    "react/jsx-indent-props": [2, "tab"],
+    "react/jsx-indent": [2, "tab"],
+    "react/jsx-no-target-blank": 0,
+    "react/no-danger": 0,
+    "react/prefer-stateless-function": 0,
+    "react/prop-types": 0,
+    "react/require-extension": 0,
+    "react/self-closing-comp": 0,
+    "react/sort-comp": 0
+  }
+}

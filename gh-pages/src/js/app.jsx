@@ -1,64 +1,80 @@
-var React = require('react');
-var NumberEasing = require('../../../dist/index.js');
+/*
+  From
+  https://github.com/javierbyte/react-number-easing
+  Refactored to use React class.
+*/
 
-var ReactDemoPage = React.createClass({
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-	getInitialState() {
-		return {
+import NumberEasing from '../../../dist/index';
+
+class ReactDemoPage extends React.PureComponent {
+	constructor(props) {
+		super(props);
+		this.state = {
+			inputValue: 0,
 			number: 0,
-			inputValue: 0
-		}
-	},
+		};
+	}
 
 	componentDidMount() {
+		// eslint-disable-next-line react/no-did-mount-set-state
 		this.setState({
-			number: 1000
+			number: 1000.00,
 		});
-	},
+	}
 
-	onChangeInputValue(event) {
+	onChangeInputValue = (e) => {
 		this.setState({
-			inputValue: event.target.value
-		})
-	},
+			inputValue: e.target.value,
+		});
+	}
 
-	updateNumber(e) {
+	updateNumber = (e) => {
 		e.preventDefault();
 
 		this.setState({
-			number: this.state.inputValue
-		})
-	},
-
-	generateRandom() {
-		this.setState({
-			inputValue: Math.round(Math.random() * 3000)
+			number: this.state.inputValue,
 		});
-	},
+	}
 
-    render() {
-        return (
-            <div>
-            	<h1>
-				    <NumberEasing
+	generateRandom = () => {
+		this.setState({
+			inputValue: parseFloat(Math.min(0 + (Math.random() * (3000 - 0)), 3000).toFixed(2)),
+		});
+	}
+
+	render() {
+		return (
+			<div>
+				<h1>
+					<NumberEasing
 						value={this.state.number}
-						speed={2000}/>
+						speed={2000}
+					/>
 				</h1>
 
 				<form onSubmit={this.updateNumber}>
-					<input className='big' type='number' value={this.state.inputValue} onChange={this.onChangeInputValue} />
-
+					<input
+						className="big"
+						onChange={this.onChangeInputValue}
+						step="any"
+						type="number"
+						value={this.state.inputValue}
+					/>
 					<div>
-						<button type='submit'>Update value</button>
+						<button type="submit">Update value</button>
 					</div>
 					<div>
 						<button onClick={this.generateRandom}>Random</button>
 					</div>
 				</form>
-            </div>
-        );
-    }
+			</div>
+		);
+	}
+}
 
-});
+export default ReactDemoPage;
 
-React.render(<ReactDemoPage/>, document.getElementById('demo'));
+ReactDOM.render(<ReactDemoPage />, document.getElementById('demo'));

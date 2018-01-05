@@ -1,3 +1,9 @@
+#0.0.6
+Adds in decimal values (thanks! @jbcoder)
+
+#0.0.5
+Updates to React 16 (thanks! @kunukn)
+
 #0.0.4
 Fix incorrect numbers being drawn when the screen was inactive. (thanks! @migreva)
 

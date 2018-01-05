@@ -1,102 +1,121 @@
-var React = require('react');
+/*
+  From
+  https://github.com/javierbyte/react-number-easing
+  Refactored to use React class.
+*/
 
-var eases = require('eases');
+import eases from 'eases';
+import PropTypes from 'prop-types';
+import React from 'react';
 
-var NumberEasing = React.createClass({
+class NumberEasing extends React.Component {
+	constructor(props) {
+		super(props);
 
-    propTypes: {
-        value: React.PropTypes.any.isRequired,
-        speed: React.PropTypes.number,
-        ease: React.PropTypes.oneOf(Object.keys(eases)),
-        useLocaleString: React.PropTypes.bool,
-        delayValue: React.PropTypes.number
-    },
+		const value = parseFloat(props.value);
 
-    timeout: null,
-    startAnimationTime: null,
+		this.timeout = null;
+		this.startAnimationTime = null;
+		this.state = {
+			displayValue: value,
+			previousValue: value,
+		};
+	}
 
-    getInitialState() {
-        var value = parseInt(this.props.value, 10);
+	componentWillReceiveProps(nextProps) {
+		const value = parseFloat(this.props.value);
 
-        return {
-            previousValue: value,
-            displayValue: value
-        }
-    },
+		if (parseFloat(nextProps.value) === value) {
+			return;
+		}
 
-    getDefaultProps() {
-        return {
-            speed: 500,
-            ease: 'quintInOut',
-            useLocaleString: false
-        }
-    },
+		this.setState({
+			previousValue: this.state.displayValue,
+		});
 
-    componentWillReceiveProps(nextProps) {
-        var value = parseInt(this.props.value, 10);
+		if (!window.isNaN(parseInt(this.props.delayValue, 10))) {
+			this.delayTimeout = setTimeout(() => {
+				this.startAnimationTime = new Date().getTime();
+				this.updateNumber();
+			}, this.props.delayValue);
+		} else {
+			this.startAnimationTime = new Date().getTime();
+			this.updateNumber();
+		}
+	}
 
-        if(parseInt(nextProps.value, 10) === value) return;
+	shouldComponentUpdate(nextProps, nextState) {
+		return nextState.displayValue !== this.state.displayValue;
+	}
 
-        this.setState({
-            previousValue: this.state.displayValue
-        });
+	updateNumber = () => {
+		const value = parseFloat(this.props.value);
+		const now = new Date().getTime();
+		const elapsedTime = Math.min(
+			this.props.speed,
+			now - this.startAnimationTime,
+		);
+		const progress = eases[this.props.ease](elapsedTime / this.props.speed);
 
-        if (!isNaN(parseInt(this.props.delayValue, 10))) {
-            this.delayTimeout = setTimeout(() => {
-                this.startAnimationTime = (new Date()).getTime();
-                this.updateNumber();
-            }, this.props.delayValue);
-        } else {
-            this.startAnimationTime = (new Date()).getTime();
-            this.updateNumber();
-        }
-    },
+		const currentDisplayValue = Math.round(((
+			(value - this.state.previousValue) * progress) + this.state.previousValue) * 100) / 100;
 
-    shouldComponentUpdate(nextProps, nextState) {
-        return nextState.displayValue !== this.state.displayValue;
-    },
+		this.setState({
+			displayValue: currentDisplayValue,
+		});
 
-    updateNumber() {
-        var value = parseInt(this.props.value, 10);
+		if (elapsedTime < this.props.speed) {
+			this.timeout = setTimeout(this.updateNumber, 16);
+		} else {
+			this.setState({
+				previousValue: value,
+			});
+		}
+	}
 
-        var now = (new Date()).getTime();
-        var elapsedTime = Math.min(this.props.speed, (now - this.startAnimationTime));
-        var progress = eases[this.props.ease](elapsedTime / this.props.speed);
+	componentWillUnmount() {
+		clearTimeout(this.timeout);
+		clearTimeout(this.delayTimeout);
+	}
 
-        var currentDisplayValue = Math.round((value - this.state.previousValue) * progress + this.state.previousValue);
+	render() {
+		const {
+			className,
+			delayValue,
+			ease,
+			speed,
+			useLocaleString,
+			value,
+			...other
+		} = this.props;
+		const { displayValue } = this.state;
 
-        this.setState({
-            displayValue: currentDisplayValue
-        });
+		let classes = 'react-number-easing';
+		if (className) {
+			classes += ` ${className}`;
+		}
 
-        if(elapsedTime < this.props.speed) {
-            this.timeout = setTimeout(this.updateNumber, 16);
-        } else {
-            this.setState({
-                previousValue: value
-            });
-        }
-    },
+		return (
+			<span {...other} className={classes}>
+				{useLocaleString ? displayValue.toLocaleString() : displayValue}
+			</span>
+		);
+	}
+}
 
-    componentWillUnmount() {
-        clearTimeout(this.timeout);
-        clearTimeout(this.delayTimeout);
-    },
+NumberEasing.propTypes = {
+	delayValue: PropTypes.number,
+	ease: PropTypes.oneOf(Object.keys(eases)),
+	speed: PropTypes.number,
+	useLocaleString: PropTypes.bool,
+	value: PropTypes.any.isRequired,
+};
 
-    render() {
-        var {className, useLocaleString, ...other} = this.props;
-        var {displayValue} = this.state;
+NumberEasing.defaultProps = {
+	delayValue: 50,
+	ease: 'quintInOut',
+	speed: 500,
+	useLocaleString: false,
+};
 
-        var classes = 'react-number-easing';
-        if(className) classes += ' ' + className;
-
-        return (
-            <span {...other} className={classes}>
-                {useLocaleString ? displayValue.toLocaleString() : displayValue}
-            </span>
-        );
-    }
-
-});
-
-module.exports = NumberEasing;
+export default NumberEasing;
