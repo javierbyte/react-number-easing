@@ -12,13 +12,13 @@ class NumberEasing extends React.Component {
 	constructor(props) {
 		super(props);
 
-		const { value } = this.props;
+		const { value, precision, trail } = this.props;
 
 		this.timeout = null;
 		this.startAnimationTime = null;
 		this.state = {
 			displayValue: value,
-			previousValue: value,
+			previousValue: trail ? value.toFixed(precision) : value,
 		};
 	}
 
@@ -86,6 +86,7 @@ class NumberEasing extends React.Component {
 			ease,
 			precision,
 			speed,
+			trail,
 			useLocaleString,
 			value,
 			...other
@@ -99,7 +100,9 @@ class NumberEasing extends React.Component {
 
 		return (
 			<span {...other} className={classes}>
-				{useLocaleString ? displayValue.toLocaleString() : displayValue}
+				{useLocaleString ? displayValue.toLocaleString() :
+					trail ? displayValue.toFixed(precision) : displayValue
+				}
 			</span>
 		);
 	}
@@ -110,6 +113,7 @@ NumberEasing.propTypes = {
 	ease: PropTypes.oneOf(Object.keys(eases)),
 	precision: PropTypes.number,
 	speed: PropTypes.number,
+	trail: PropTypes.bool,
 	useLocaleString: PropTypes.bool,
 	value: PropTypes.any.isRequired,
 };
@@ -119,6 +123,7 @@ NumberEasing.defaultProps = {
 	ease: 'quintInOut',
 	precision: 2,
 	speed: 500,
+	trail: false,
 	useLocaleString: false,
 };
 

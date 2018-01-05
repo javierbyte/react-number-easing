@@ -22,7 +22,7 @@ class ReactDemoPage extends React.PureComponent {
 	componentDidMount() {
 		// eslint-disable-next-line react/no-did-mount-set-state
 		this.setState({
-			number: 1000.00,
+			number: 1000,
 		});
 	}
 
@@ -60,6 +60,7 @@ class ReactDemoPage extends React.PureComponent {
 					<NumberEasing
 						precision={parseInt(this.state.precision, 10)}
 						speed={2000}
+						trail={true}
 						value={this.state.number}
 					/>
 				</h1>
