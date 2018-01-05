@@ -1,6 +1,11 @@
 {
   "name": "che-react-number-easing",
-  "version": "0.0.5",
+  "version": "0.0.6",
+  "author": "che.wf",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jbcoder/react-number-easing"
+  },
   "description": "React component for fancy transition for numbers.",
   "main": "dist/index.js",
   "scripts": {
@@ -17,7 +22,6 @@
     "number",
     "easing"
   ],
-  "author": "javierbyte",
   "license": "ISC",
   "dependencies": {
     "eases": "^1.0.8",
