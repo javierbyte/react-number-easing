@@ -15,6 +15,7 @@ class ReactDemoPage extends React.PureComponent {
 		this.state = {
 			inputValue: 0,
 			number: 0,
+			precision: 2,
 		};
 	}
 
@@ -39,9 +40,16 @@ class ReactDemoPage extends React.PureComponent {
 		});
 	}
 
-	generateRandom = () => {
+	updatePrecision = (e) => {
 		this.setState({
-			inputValue: parseFloat(Math.min(0 + (Math.random() * (3000 - 0)), 3000).toFixed(2)),
+			precision: e.target.value,
+		});
+	}
+
+	generateRandom = () => {
+		const prec = this.state.precision > -1 ? this.state.precision : 0;
+		this.setState({
+			inputValue: parseFloat(Math.min(0 + (Math.random() * (3000 - 0)), 3000).toFixed(prec)),
 		});
 	}
 
@@ -50,8 +58,9 @@ class ReactDemoPage extends React.PureComponent {
 			<div>
 				<h1>
 					<NumberEasing
-						value={this.state.number}
+						precision={parseInt(this.state.precision, 10)}
 						speed={2000}
+						value={this.state.number}
 					/>
 				</h1>
 
@@ -67,6 +76,14 @@ class ReactDemoPage extends React.PureComponent {
 						<button type="submit">Update value</button>
 					</div>
 					<div>
+						<input
+							min="-2"
+							max="5"
+							onChange={this.updatePrecision}
+							step="1"
+							type="number"
+							value={this.state.precision}
+						/>
 						<button onClick={this.generateRandom}>Random</button>
 					</div>
 				</form>

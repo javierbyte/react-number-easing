@@ -12,7 +12,7 @@ class NumberEasing extends React.Component {
 	constructor(props) {
 		super(props);
 
-		const value = parseFloat(props.value);
+		const { value } = this.props;
 
 		this.timeout = null;
 		this.startAnimationTime = null;
@@ -23,7 +23,7 @@ class NumberEasing extends React.Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		const value = parseFloat(this.props.value);
+		const { value } = this.props;
 
 		if (parseFloat(nextProps.value) === value) {
 			return;
@@ -49,7 +49,7 @@ class NumberEasing extends React.Component {
 	}
 
 	updateNumber = () => {
-		const value = parseFloat(this.props.value);
+		const { value, precision } = this.props;
 		const now = new Date().getTime();
 		const elapsedTime = Math.min(
 			this.props.speed,
@@ -58,7 +58,8 @@ class NumberEasing extends React.Component {
 		const progress = eases[this.props.ease](elapsedTime / this.props.speed);
 
 		const currentDisplayValue = Math.round(((
-			(value - this.state.previousValue) * progress) + this.state.previousValue) * 100) / 100;
+			(value - this.state.previousValue) * progress) + this.state.previousValue) *
+			Math.pow(10, precision)) / Math.pow(10, precision);
 
 		this.setState({
 			displayValue: currentDisplayValue,
@@ -83,6 +84,7 @@ class NumberEasing extends React.Component {
 			className,
 			delayValue,
 			ease,
+			precision,
 			speed,
 			useLocaleString,
 			value,
@@ -106,6 +108,7 @@ class NumberEasing extends React.Component {
 NumberEasing.propTypes = {
 	delayValue: PropTypes.number,
 	ease: PropTypes.oneOf(Object.keys(eases)),
+	precision: PropTypes.number,
 	speed: PropTypes.number,
 	useLocaleString: PropTypes.bool,
 	value: PropTypes.any.isRequired,
@@ -114,6 +117,7 @@ NumberEasing.propTypes = {
 NumberEasing.defaultProps = {
 	delayValue: 50,
 	ease: 'quintInOut',
+	precision: 0,
 	speed: 500,
 	useLocaleString: false,
 };

@@ -10,7 +10,7 @@ React component for fancy number transitions.
 ## Installation
 
 ```js
-npm install react-number-easing --save
+npm i -S che-react-number-easing
 ```
 
 ## Usage.
@@ -36,11 +36,11 @@ var NumberEasing = require('react-number-easing');
 If you want to build this from source, you will need babel and less.
 
 ```js
-npm install -g babel less
+npm i -g babel less
 ```
 
 And run the pre publish script
 
 ```js
-npm run prepublish
+npm run prepare
 ```

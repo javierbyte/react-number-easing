@@ -1,5 +1,5 @@
 {
-  "name": "react-number-easing",
+  "name": "che-react-number-easing",
   "version": "0.0.5",
   "description": "React component for fancy transition for numbers.",
   "main": "dist/index.js",
