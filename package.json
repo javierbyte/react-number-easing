@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "pages": "git subtree push --prefix gh-pages origin gh-pages",
-    "prepublishOnly": "mkdir -p dist && babel src/index.jsx -u -o dist/index.js --stage 1",
+    "prepublishOnly": "babel src/index.jsx -u -o dist/index.js --stage 1",
     "prepare": "babel src/index.jsx -u -o dist/index.js --stage 1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
