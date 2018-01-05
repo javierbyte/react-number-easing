@@ -19,17 +19,20 @@ npm i -S che-react-number-easing
 var NumberEasing = require('react-number-easing');
 
 <NumberEasing
-  value={15}
+  ease="quintInOut"
+  precision={2}
   speed={300}
-  ease='quintInOut' />
+  value={15}
+/>
 ```
 
 ### Props
 
-* `value`: The value that you want to display at the end of the animation.
+* `[ease]`: The easing equation for the animation. Defaults to `quintInOut`. You can choose from [mattdesl/eases](https://github.com/mattdesl/eases/blob/master/index.js).
+* `[precision]`: How many decimal places you want to show.
 * `[speed]`: How fast do you want to finish the animation? Defaults to 500ms.
 * `[useLocaleString]`: Should use `toLocaleString()`?
-* `[ease]`: The easing equation for the animation. Defaults to `quintInOut`. You can choose from [mattdesl/eases](https://github.com/mattdesl/eases/blob/master/index.js).
+* `[value]`: The value that you want to display at the end of the animation.
 
 # Build
 
