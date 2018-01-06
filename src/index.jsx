@@ -18,7 +18,9 @@ class NumberEasing extends React.Component {
 		this.startAnimationTime = null;
 		this.state = {
 			displayValue: value,
-			previousValue: trail ? value.toFixed(precision) : value,
+			// eslint-disable-next-line no-restricted-globals
+			previousValue: trail && !isNaN(parseFloat(value)) ?
+				value.toFixed(precision > -1 ? precision : 0) : value,
 		};
 	}
 
@@ -101,7 +103,7 @@ class NumberEasing extends React.Component {
 		return (
 			<span {...other} className={classes}>
 				{useLocaleString ? displayValue.toLocaleString() :
-					trail ? displayValue.toFixed(precision) : displayValue
+					trail ? displayValue.toFixed(precision > -1 ? precision : 0) : displayValue
 				}
 			</span>
 		);
