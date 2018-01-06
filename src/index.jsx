@@ -102,8 +102,8 @@ class NumberEasing extends React.Component {
 
 		return (
 			<span {...other} className={classes}>
-				{useLocaleString ? displayValue.toLocaleString() :
-					trail ? displayValue.toFixed(precision > -1 ? precision : 0) : displayValue
+				{useLocaleString ? parseFloat(displayValue).toLocaleString() :
+					trail ? parseFloat(displayValue).toFixed(precision > -1 ? precision : 0) : displayValue
 				}
 			</span>
 		);
