@@ -20,7 +20,7 @@ class NumberEasing extends React.Component {
 			displayValue: value,
 			// eslint-disable-next-line no-restricted-globals
 			previousValue: trail && !isNaN(parseFloat(value)) ?
-				value.toFixed(precision > -1 ? precision : 0) : value,
+				parseFloat(value).toFixed(precision > -1 ? precision : 0) : value,
 		};
 	}
 
