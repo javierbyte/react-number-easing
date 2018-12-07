@@ -91,6 +91,8 @@ class NumberEasing extends React.Component {
 			trail,
 			useLocaleString,
 			value,
+			locale,
+			currency,
 			...other
 		} = this.props;
 		const { displayValue } = this.state;
@@ -100,9 +102,15 @@ class NumberEasing extends React.Component {
 			classes += ` ${className}`;
 		}
 
+		const opts = {}
+		if (useLocaleString && currency) {
+			opts.currency = currency
+			opts.style = 'currency'
+		}
+
 		return (
 			<span {...other} className={classes}>
-				{useLocaleString ? parseFloat(displayValue).toLocaleString() :
+				{useLocaleString ? parseFloat(displayValue).toLocaleString(locale, opts) :
 					trail ? parseFloat(displayValue).toFixed(precision > -1 ? precision : 0) : displayValue
 				}
 			</span>
@@ -118,6 +126,8 @@ NumberEasing.propTypes = {
 	trail: PropTypes.bool,
 	useLocaleString: PropTypes.bool,
 	value: PropTypes.any.isRequired,
+	locale: PropTypes.string,
+	currency: PropTypes.string,
 };
 
 NumberEasing.defaultProps = {
@@ -127,6 +137,8 @@ NumberEasing.defaultProps = {
 	speed: 500,
 	trail: false,
 	useLocaleString: false,
+	locale: 'en-US',
+	currency: ''
 };
 
 export default NumberEasing;
