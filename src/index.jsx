@@ -84,15 +84,15 @@ class NumberEasing extends React.Component {
 	render() {
 		const {
 			className,
+			currency,
 			delayValue,
 			ease,
+			locale,
 			precision,
 			speed,
 			trail,
 			useLocaleString,
 			value,
-			locale,
-			currency,
 			...other
 		} = this.props;
 		const { displayValue } = this.state;
@@ -102,10 +102,10 @@ class NumberEasing extends React.Component {
 			classes += ` ${className}`;
 		}
 
-		const opts = {}
+		const opts = {};
 		if (useLocaleString && currency) {
-			opts.currency = currency
-			opts.style = 'currency'
+			opts.currency = currency;
+			opts.style = 'currency';
 		}
 
 		return (
@@ -119,26 +119,26 @@ class NumberEasing extends React.Component {
 }
 
 NumberEasing.propTypes = {
+	currency: PropTypes.string,
 	delayValue: PropTypes.number,
 	ease: PropTypes.oneOf(Object.keys(eases)),
+	locale: PropTypes.string,
 	precision: PropTypes.number,
 	speed: PropTypes.number,
 	trail: PropTypes.bool,
 	useLocaleString: PropTypes.bool,
 	value: PropTypes.any.isRequired,
-	locale: PropTypes.string,
-	currency: PropTypes.string,
 };
 
 NumberEasing.defaultProps = {
+	currency: '',
 	delayValue: 50,
 	ease: 'quintInOut',
+	locale: 'en-US',
 	precision: 2,
 	speed: 500,
 	trail: false,
-	useLocaleString: false,
-	locale: 'en-US',
-	currency: ''
+	useLocaleString: true,
 };
 
 export default NumberEasing;

@@ -61,6 +61,7 @@ class ReactDemoPage extends React.PureComponent {
 						precision={parseInt(this.state.precision, 10)}
 						speed={2000}
 						trail={true}
+						useLocaleString={true}
 						value={this.state.number}
 					/>
 				</h1>
@@ -78,8 +79,8 @@ class ReactDemoPage extends React.PureComponent {
 					</div>
 					<div>
 						<input
-							min="-2"
 							max="5"
+							min="-2"
 							onChange={this.updatePrecision}
 							step="1"
 							type="number"
