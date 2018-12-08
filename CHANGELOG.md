@@ -1,5 +1,8 @@
-#0.0.6
-Adds in decimal values (thanks! @jbcoder)
+#0.1.3
+Adds in currency (thanks! @jgautheron)
+
+#0.1.2
+Adds in decimal values (thanks! @che-wf)
 
 #0.0.5
 Updates to React 16 (thanks! @kunukn)
