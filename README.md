@@ -2,9 +2,9 @@
 
 React component for fancy number transitions.
 
-[Live demo](http://javierbyte.github.io/react-number-easing/)
+[Live demo](https://che-wf.github.io/react-number-easing/)
 
-[![react-number-easing screenshot](assets/number-easing-infinite.gif)](http://javierbyte.github.io/react-number-easing/)
+[![react-number-easing screenshot](assets/number-easing-infinite.gif)](https://che-wf.github.io/react-number-easing/)
 
 
 ## Installation
