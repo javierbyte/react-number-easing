@@ -1,3 +1,7 @@
+# Ignore
 **/node_modules
 *.log
 dist/*
+
+# Exceptions
+!dist/
