@@ -1,84 +1,89 @@
 @base-font-size: 17px;
 
-@primary-color: #8BC34A;
+@primary-color: #8bc34a;
 
 .border-radius {
-    border-radius: 2px;
+  border-radius: 2px;
 }
 .clicky {
-    &:active {
-        top: 2px;
-    }
+  &:active {
+    top: 2px;
+  }
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    position: relative;
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 h1 {
-    font-size: 4em;
+  font-size: 4em;
 }
 
 body {
-    color: #333;
-    background: #f0f1f3;
-    text-align: center;
+  color: #333;
+  background: #f0f1f3;
+  text-align: center;
 }
 
-body, input, textarea, button {
-    font-family: 'Proxima Nova', 'Lato', sans-serif;
-    font-size: @base-font-size;
+body,
+input,
+textarea,
+button {
+  font-family: 'Proxima Nova', 'Lato', sans-serif;
+  font-size: @base-font-size;
 }
 
 #demo {
-    text-align: center;
-    padding: 3em 1.5em 1.5em;
-    width: 100%;
+  text-align: center;
+  padding: 3em 1.5em 1.5em;
+  width: 100%;
 }
 
-@input-padding: .4em;
-input, button {
-    margin: @input-padding;
+@input-padding: 0.4em;
+input,
+button {
+  margin: @input-padding;
 }
 
 input {
-    .border-radius;
-    line-height: 1;
-    padding: @input-padding;
-    border:1px solid #ccc;
+  .border-radius;
+  line-height: 1;
+  padding: @input-padding;
+  border: 1px solid #ccc;
 
-    &.big {
-        font-size: @base-font-size * 1.5;
-    }
+  &.big {
+    font-size: @base-font-size * 1.5;
+  }
 
-    &:focus {
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 }
 
 button {
-    .clicky;
-    .border-radius;
-    display: inline-block;
-    background: @primary-color;
-    border:none;
-    padding: @input-padding @input-padding * 2;
-    color: #fff;
+  .clicky;
+  .border-radius;
+  display: inline-block;
+  background: @primary-color;
+  border: none;
+  padding: @input-padding @input-padding * 2;
+  color: #fff;
 
-    &:hover {
-        background: darken(@primary-color, 10%);
-    }
+  &:hover {
+    background: darken(@primary-color, 10%);
+  }
 
-    &:focus {
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 }
-
