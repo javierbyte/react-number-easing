@@ -6,6 +6,9 @@
     "type": "git",
     "url": "https://github.com/che-wf/react-number-easing"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "description": "React component for fancy transition for numbers.",
   "main": "dist/index.js",
   "scripts": {
