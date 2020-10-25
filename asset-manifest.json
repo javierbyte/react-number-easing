@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/react-number-easing/static/js/main.fa748f99.chunk.js",
+    "main.js.map": "/react-number-easing/static/js/main.fa748f99.chunk.js.map",
+    "runtime-main.js": "/react-number-easing/static/js/runtime-main.b879f945.js",
+    "runtime-main.js.map": "/react-number-easing/static/js/runtime-main.b879f945.js.map",
+    "static/js/2.ce9b7e0b.chunk.js": "/react-number-easing/static/js/2.ce9b7e0b.chunk.js",
+    "static/js/2.ce9b7e0b.chunk.js.map": "/react-number-easing/static/js/2.ce9b7e0b.chunk.js.map",
+    "index.html": "/react-number-easing/index.html",
+    "static/js/2.ce9b7e0b.chunk.js.LICENSE.txt": "/react-number-easing/static/js/2.ce9b7e0b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b879f945.js",
+    "static/js/2.ce9b7e0b.chunk.js",
+    "static/js/main.fa748f99.chunk.js"
+  ]
+}
