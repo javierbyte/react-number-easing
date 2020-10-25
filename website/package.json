@@ -1,0 +1,49 @@
+{
+  "name": "react-number-easing",
+  "description": "React component for fancy number transitions.",
+  "version": "1.0.0",
+  "homepage": "https://javier.xyz/react-number-easing/",
+  "dependencies": {
+    "capsize": "^1.1.0",
+    "jbx": "^1.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "^4.0.0",
+    "styled-components": "^5.2.0",
+    "react-number-easing": "../"
+  },
+  "scripts": {
+    "dev": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not IE 11",
+      "not IE_Mob 11",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/javierbyte/react-number-easing"
+  },
+  "author": "Javier Bórquez <hi@javier.xyz>",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "gh-pages": "^2.1.1"
+  }
+}
