@@ -6,10 +6,7 @@ import NumberEasing from 'react-number-easing';
 import {
   JBX,
   Button,
-  Range,
   HeaderH1,
-  HeaderH3,
-  HeaderH2,
   Text,
   Space,
   Box,
@@ -17,11 +14,9 @@ import {
   Ul,
   Li,
   Container,
-  Dropzone,
   Inline,
   Tabs,
   Tab,
-  Code
 } from 'jbx';
 
 const EASING_LIST = [
@@ -49,8 +44,8 @@ const Pre = Styled.pre({
 });
 
 function App() {
-  const [target, targetSet] = React.useState(0);
-  const [currentEasing, currentEasingSet] = React.useState('quintInOut');
+  const [target, targetSet] = useState(0);
+  const [currentEasing, currentEasingSet] = useState('quintInOut');
 
   function onRandomizeTarget() {
     targetSet(Math.floor(Math.random() * 1024));
