@@ -3,7 +3,7 @@ import Styled from 'styled-components';
 
 import NumberEasing from 'react-number-easing';
 
-import { JBX, Button, HeaderH1, Text, Space, A, Ul, Li, Container, Inline, Tabs, Tab } from 'jbx';
+import { JBX, Button, MainHeader, Text, Space, A, Ul, Li, Container, Inline, Tabs, Tab } from 'jbx';
 
 const EASING_LIST = [
   'cubicInOut',
@@ -44,25 +44,15 @@ function App() {
   return (
     <Container>
       <JBX accent={'#95a5a6'} />
-      <HeaderH1
-        style={{
-          fontWeight: 900,
-          display: 'inline-block',
-          width: 'auto',
-          padding: '6px',
-          backgroundColor: 'var(--accent-color)'
-        }}
-      >
-        react-number-easing
-      </HeaderH1>
+      <MainHeader>react-number-easing</MainHeader>
       <Space h={1} />
       <Text>React component for fancy number transitions.</Text>
       <Space h={2} />
 
       <Space h={1} />
-      <HeaderH1 style={{ fontVariantNumeric: 'tabular-nums', letterSpacing: -2 }}>
+      <h1 style={{ fontVariantNumeric: 'tabular-nums', letterSpacing: -2, fontSize: "4rem" }}>
         <NumberEasing decimals={0} value={target} ease={currentEasing} speed={1000} />
-      </HeaderH1>
+      </h1>
 
       <Space h={1} />
 

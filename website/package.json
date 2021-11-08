@@ -5,12 +5,12 @@
   "homepage": "https://javier.xyz/react-number-easing/",
   "dependencies": {
     "capsize": "^2.0.0",
-    "jbx": "^1.2.0",
+    "jbx": "^1.6.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-number-easing": "^1.0.1",
     "react-scripts": "^4.0.3",
-    "styled-components": "^5.3.0"
+    "styled-components": "^5.3.3"
   },
   "scripts": {
     "dev": "react-scripts start",
