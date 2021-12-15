@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useRef } from "react";
-import Eases from "eases";
+import { createElement, Fragment, useEffect, useState, useRef } from 'react';
+import Eases from 'eases';
 
 function useInterval(callback, delay) {
   const savedCallback = useRef();
@@ -23,7 +23,13 @@ function defaultRender(value, decimals) {
   return Number(value).toFixed(decimals);
 }
 
-function NumberEasing({ value, speed = 500, decimals = 0, customFunctionRender, ease = "quintInOut" }) {
+function NumberEasing({
+  value,
+  speed = 500,
+  decimals = 0,
+  customFunctionRender,
+  ease = 'quintInOut'
+}) {
   const [renderValue, renderValueSet] = useState(value);
   const [lastTarget, lastTargetSet] = useState(value);
 
@@ -48,7 +54,7 @@ function NumberEasing({ value, speed = 500, decimals = 0, customFunctionRender, 
 
   const functionRender = customFunctionRender || defaultRender;
 
-  return React.createElement(React.Fragment, {}, [functionRender(renderValue, decimals)]);
+  return createElement(Fragment, {}, [functionRender(renderValue, decimals)]);
 }
 
 export default NumberEasing;

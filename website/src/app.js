@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Styled from 'styled-components';
 
 import NumberEasing from 'react-number-easing';
@@ -50,7 +50,7 @@ function App() {
       <Space h={2} />
 
       <Space h={1} />
-      <h1 style={{ fontVariantNumeric: 'tabular-nums', letterSpacing: -2, fontSize: "4rem" }}>
+      <h1 style={{ fontVariantNumeric: 'tabular-nums', letterSpacing: -2, fontSize: '4rem' }}>
         <NumberEasing decimals={0} value={target} ease={currentEasing} speed={1000} />
       </h1>
 
@@ -114,17 +114,19 @@ function App() {
         <Space h={0.5} />
         <Ul>
           <Li>
-            <A href="https://javier.xyz/cohesive-colors/">Cohesive Colors</A>, create more cohesive color schemes.
+            <A href="https://javier.xyz/cohesive-colors/">Cohesive Colors</A>, create more cohesive
+            color schemes.
           </Li>
           <Li>
-            <A href="https://javier.xyz/visual-center/">Visual Center</A>, find the visual center of your images /
-            logos.
+            <A href="https://javier.xyz/visual-center/">Visual Center</A>, find the visual center of
+            your images / logos.
           </Li>
           <Li>
             <A href="https://clashjs.com/">Clash.js</A>, JS AI Battle Game.
           </Li>
           <Li>
-            <A href="https://javier.xyz/morphin/">morphin</A>, create animated CSS transitions with box-shadow.
+            <A href="https://javier.xyz/morphin/">morphin</A>, create animated CSS transitions with
+            box-shadow.
           </Li>
         </Ul>
       </Text>

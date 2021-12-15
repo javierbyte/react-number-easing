@@ -1,6 +1,6 @@
 {
   "name": "react-number-easing",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React component for fancy transition for numbers.",
   "main": "src/index.js",
   "keywords": [
@@ -24,7 +24,7 @@
     "url": "https://github.com/javierbyte/react-number-easing.git"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-plugin-react": "^7.24.0"
+    "eslint": "^8.4.1",
+    "eslint-plugin-react": "^7.27.1"
   }
 }
