@@ -4,8 +4,8 @@
 declare module 'react-number-easing' {
   import * as React from 'react'
 
-  import type TEases from 'eases'
-  type TEaseTypes = keyof typeof TEases
+  // Referenced from @types/eases
+  type TEaseTypes = 'backInOut' | 'backIn' | 'backOut' | 'bounceInOut' | 'bounceIn' | 'bounceOut' | 'circInOut' | 'circIn' | 'circOut' | 'cubicInOut' | 'cubicIn' | 'cubicOut' | 'elasticInOut' | 'elasticIn' | 'elasticOut' | 'expoInOut' | 'expoIn' | 'expoOut' | 'linear' | 'quadInOut' | 'quadIn' | 'quadOut' | 'quartInOut' | 'quartIn' | 'quartOut' | 'quintInOut' | 'quintIn' | 'quintOut' | 'sineInOut' | 'sineIn' | 'sineOut'
 
   interface NumberEasingProps {
     /**
