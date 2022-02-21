@@ -25,6 +25,7 @@
     "url": "https://github.com/javierbyte/react-number-easing.git"
   },
   "devDependencies": {
+    "@types/eases": "^1.0.2",
     "eslint": "^8.6.0",
     "eslint-plugin-react": "^7.28.0"
   }
