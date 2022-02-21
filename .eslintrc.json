@@ -18,5 +18,6 @@
         "react"
     ],
     "rules": {
+        "react/prop-types": "off"
     }
 }
