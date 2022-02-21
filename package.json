@@ -3,6 +3,7 @@
   "version": "1.0.2",
   "description": "React component for fancy transition for numbers.",
   "main": "src/index.js",
+  "typings": "src/index.d.ts",
   "keywords": [
     "react",
     "react-component",
