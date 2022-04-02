@@ -1,10 +1,13 @@
 {
   "files": {
-    "main.js": "/react-number-easing/static/js/main.0edbd974.js",
+    "main.css": "/react-number-easing/static/css/main.79beb5f4.css",
+    "main.js": "/react-number-easing/static/js/main.78b89d9c.js",
     "index.html": "/react-number-easing/index.html",
-    "main.0edbd974.js.map": "/react-number-easing/static/js/main.0edbd974.js.map"
+    "main.79beb5f4.css.map": "/react-number-easing/static/css/main.79beb5f4.css.map",
+    "main.78b89d9c.js.map": "/react-number-easing/static/js/main.78b89d9c.js.map"
   },
   "entrypoints": [
-    "static/js/main.0edbd974.js"
+    "static/css/main.79beb5f4.css",
+    "static/js/main.78b89d9c.js"
   ]
 }
