@@ -1,4 +1,4 @@
-module.exports = {
+{
     "env": {
         "browser": true,
         "es2021": true
@@ -18,5 +18,11 @@ module.exports = {
         "react"
     ],
     "rules": {
+        "react/prop-types": "off"
+    },
+    "settings": {
+        "react": {
+            "version": "17.0"
+        }
     }
-};
+}
