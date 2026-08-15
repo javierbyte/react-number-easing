@@ -1,9 +1,21 @@
 import { useEffect, useState } from 'react';
-import Styled from 'styled-components';
-
 import NumberEasing from 'react-number-easing';
 
-import { JBX, Button, MainHeader, Text, Space, A, Ul, Li, Container, Inline, Tabs, Tab } from 'jbx';
+import {
+  JBX,
+  Button,
+  MainHeader,
+  Text,
+  Space,
+  A,
+  Ul,
+  Li,
+  CodeSnippet,
+  Container,
+  Inline,
+  Tabs,
+  Tab
+} from 'jbx';
 
 const EASING_LIST = [
   'cubicInOut',
@@ -23,11 +35,6 @@ const EASING_LIST = [
   'quintIn',
   'quintOut'
 ];
-
-const Pre = Styled.pre({
-  backgroundColor: '#ecf0f1',
-  padding: '16px'
-});
 
 function App() {
   const [target, targetSet] = useState(0);
@@ -56,7 +63,7 @@ function App() {
 
       <Space h={1} />
 
-      <Inline justifyContent="center">
+      <Inline>
         <Tab info>
           <Text>Target:</Text>
         </Tab>
@@ -89,7 +96,7 @@ function App() {
       </Tabs>
 
       <Space h={1} />
-      <Pre>
+      <CodeSnippet>
         <code>
           {`import NumberEasing from 'react-number-easing';
 
@@ -99,7 +106,7 @@ function App() {
   speed={1000}
   ease='${currentEasing}' />`}
         </code>
-      </Pre>
+      </CodeSnippet>
 
       <Space h={2} />
 
