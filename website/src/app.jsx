@@ -8,13 +8,12 @@ import {
   Text,
   Space,
   A,
-  Ul,
-  Li,
   CodeSnippet,
   Container,
   Inline,
   Tabs,
-  Tab
+  Tab,
+  MoreExperiments
 } from 'jbx';
 
 const EASING_LIST = [
@@ -116,27 +115,7 @@ function App() {
       </Text>
 
       <Space h={2} />
-      <Text>More experiments:</Text>
-      <Text>
-        <Space h={0.5} />
-        <Ul>
-          <Li>
-            <A href="https://javier.xyz/cohesive-colors/">Cohesive Colors</A>, create more cohesive
-            color schemes.
-          </Li>
-          <Li>
-            <A href="https://javier.xyz/visual-center/">Visual Center</A>, find the visual center of
-            your images / logos.
-          </Li>
-          <Li>
-            <A href="https://clashjs.com/">Clash.js</A>, JS AI Battle Game.
-          </Li>
-          <Li>
-            <A href="https://javier.xyz/morphin/">morphin</A>, create animated CSS transitions with
-            box-shadow.
-          </Li>
-        </Ul>
-      </Text>
+      <MoreExperiments exclude="react-number-easing" />
 
       <Space h={2} />
       <Text>
