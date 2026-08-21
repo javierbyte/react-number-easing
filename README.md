@@ -1,10 +1,10 @@
-# [React Number Easing](https://javier.xyz/react-number-easing/)
+# [React Number Easing](https://javier.xyz/react-number-easing)
 
 React component for fancy number transitions.
 
-[› Online Demo](https://javier.xyz/react-number-easing/).
+[› Online Demo](https://javier.xyz/react-number-easing).
 
-[![react-number-easing screenshot](assets/number-easing-infinite.gif)](https://javier.xyz/react-number-easing/)
+[![react-number-easing screenshot](assets/number-easing-infinite.gif)](https://javier.xyz/react-number-easing)
 
 
 ## Installation
