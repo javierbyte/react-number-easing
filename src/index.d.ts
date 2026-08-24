@@ -7,7 +7,7 @@ declare module 'react-number-easing' {
   // Referenced from @types/eases
   type TEaseTypes = 'backInOut' | 'backIn' | 'backOut' | 'bounceInOut' | 'bounceIn' | 'bounceOut' | 'circInOut' | 'circIn' | 'circOut' | 'cubicInOut' | 'cubicIn' | 'cubicOut' | 'elasticInOut' | 'elasticIn' | 'elasticOut' | 'expoInOut' | 'expoIn' | 'expoOut' | 'linear' | 'quadInOut' | 'quadIn' | 'quadOut' | 'quartInOut' | 'quartIn' | 'quartOut' | 'quintInOut' | 'quintIn' | 'quintOut' | 'sineInOut' | 'sineIn' | 'sineOut'
 
-  interface NumberEasingProps {
+  export interface NumberEasingProps {
     /**
      * The value that you want to display at the end of the animation. This is the target value.
      */
