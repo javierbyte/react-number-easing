@@ -3,6 +3,11 @@
 React component for animated number transitions. It supports React 17, 18, and
 19, TypeScript, server rendering, and the Next.js App Router.
 
+[![npm version](https://img.shields.io/npm/v/react-number-easing.svg)](https://www.npmjs.com/package/react-number-easing)
+[![npm downloads](https://img.shields.io/npm/dw/react-number-easing.svg)](https://www.npmjs.com/package/react-number-easing)
+[![gzipped size](https://deno.bundlejs.com/badge?q=react-number-easing)](https://bundlejs.com/?q=react-number-easing)
+[![license](https://img.shields.io/npm/l/react-number-easing.svg)](LICENSE)
+
 [› Online demo](https://javier.xyz/react-number-easing)
 
 [![react-number-easing screenshot](https://raw.githubusercontent.com/javierbyte/react-number-easing/main/assets/number-easing-infinite.gif)](https://javier.xyz/react-number-easing)
