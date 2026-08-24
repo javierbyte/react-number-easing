@@ -43,7 +43,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/javierbyte/react-number-easing.git"
+    "url": "git+https://github.com/javierbyte/react-number-easing.git"
   },
   "devDependencies": {
     "@eslint/js": "9.39.5",
