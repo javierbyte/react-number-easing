@@ -1,19 +1,16 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import NumberEasing from 'react-number-easing';
 
 import {
-  JBX,
   Button,
-  MainHeader,
   Text,
   Space,
-  A,
   CodeSnippet,
-  Container,
   Inline,
   Tabs,
   Tab,
-  MoreExperiments
 } from 'jbx';
 
 const EASING_LIST = [
@@ -32,10 +29,10 @@ const EASING_LIST = [
   'quartOut',
   'quintInOut',
   'quintIn',
-  'quintOut'
+  'quintOut',
 ];
 
-function App() {
+export default function NumberEasingApp() {
   const [target, targetSet] = useState(0);
   const [currentEasing, currentEasingSet] = useState('quintInOut');
 
@@ -48,16 +45,23 @@ function App() {
   }, []);
 
   return (
-    <Container>
-      <JBX accent={'#95a5a6'} />
-      <MainHeader>react-number-easing</MainHeader>
-      <Space h={1} />
-      <Text>React component for fancy number transitions.</Text>
+    <>
       <Space h={2} />
 
       <Space h={1} />
-      <h1 style={{ fontVariantNumeric: 'tabular-nums', letterSpacing: -2, fontSize: '4rem' }}>
-        <NumberEasing decimals={0} value={target} ease={currentEasing} speed={1000} />
+      <h1
+        style={{
+          fontVariantNumeric: 'tabular-nums',
+          letterSpacing: -2,
+          fontSize: '4rem',
+        }}
+      >
+        <NumberEasing
+          decimals={0}
+          value={target}
+          ease={currentEasing}
+          speed={1000}
+        />
       </h1>
 
       <Space h={1} />
@@ -106,23 +110,6 @@ function App() {
   ease='${currentEasing}' />`}
         </code>
       </CodeSnippet>
-
-      <Space h={2} />
-
-      <Text>
-        Learn how to use and more information about the props on{' '}
-        <A href="https://github.com/javierbyte/react-number-easing">github</A>.
-      </Text>
-
-      <Space h={2} />
-      <MoreExperiments exclude="react-number-easing" />
-
-      <Space h={2} />
-      <Text>
-        Made by <A href="https://javier.xyz">javierbyte</A>.
-      </Text>
-    </Container>
+    </>
   );
 }
-
-export default App;

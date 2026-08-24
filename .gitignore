@@ -10,6 +10,10 @@
 # testing
 /coverage
 
+# generated agent instructions; kept local, not tracked
+/AGENTS.md
+/CLAUDE.md
+
 # production
 /build
 

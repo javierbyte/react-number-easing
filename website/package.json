@@ -7,9 +7,9 @@
   "packageManager": "pnpm@11.21.0",
   "homepage": "https://javier.xyz/react-number-easing",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "echo 'Local:         http://localhost:3007/react-number-easing' && next dev -p 3007",
+    "build": "next build",
+    "start": "next start"
   },
   "repository": {
     "type": "git",
@@ -18,13 +18,11 @@
   "author": "Javier Bórquez <hi@javier.xyz>",
   "license": "BSD-3-Clause",
   "dependencies": {
-    "jbx": "^2.12.0",
+    "@next/third-parties": "^16.3.2",
+    "jbx": "^2.15.0",
+    "next": "^16.3.2",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-number-easing": "^1.0.2"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-react": "^6.0.5",
-    "vite": "^8.2.1"
   }
 }

@@ -10,7 +10,7 @@ React component for fancy number transitions.
 ## Installation
 
 ```js
-npm install react-number-easing --save
+pnpm add react-number-easing
 ```
 
 ## Usage.

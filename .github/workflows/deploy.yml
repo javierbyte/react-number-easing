@@ -1,7 +1,7 @@
 name: Deploy
 
-# Builds the demo site in website/ and publishes it to the gh-pages branch,
-# which is what javier.xyz/react-number-easing rewrites to via
+# Builds the Next.js static export in website/ and publishes it to the gh-pages
+# branch, which is what javier.xyz/react-number-easing rewrites to via
 # javierbyte.github.io/react-number-easing. The library itself is published to npm by
 # hand and is not touched here.
 on:
@@ -43,4 +43,6 @@ jobs:
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./website/dist
+          publish_dir: ./website/out
+          # Next writes assets to _next/, and Jekyll skips underscore paths.
+          enable_jekyll: false
