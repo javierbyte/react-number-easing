@@ -1,10 +1,30 @@
 {
   "name": "react-number-easing",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "packageManager": "pnpm@11.21.0",
   "description": "React component for fancy transition for numbers.",
   "main": "src/index.js",
+  "types": "src/index.d.ts",
   "typings": "src/index.d.ts",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "src",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "lint": "eslint .",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:compat": "vitest run test/number-easing.test.ts",
+    "test:types": "tsc -p test-d/tsconfig.node.json && tsc -p test-d/tsconfig.node16.json && tsc -p test-d/tsconfig.bundler.json",
+    "check:package": "node scripts/check-package.mjs",
+    "check": "pnpm build && pnpm lint && pnpm typecheck && pnpm test && pnpm test:types && pnpm check:package",
+    "prepublishOnly": "pnpm check"
+  },
   "keywords": [
     "react",
     "react-component",
@@ -18,15 +38,28 @@
     "eases": "^1.0.8"
   },
   "peerDependencies": {
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react": ">=17 <20",
+    "react-dom": ">=17 <20"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/javierbyte/react-number-easing.git"
   },
   "devDependencies": {
+    "@eslint/js": "9.39.5",
+    "@types/node": "^24.3.0",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@types/react-test-renderer": "^19.1.0",
     "eslint": "9.39.5",
-    "eslint-plugin-react": "^7.37.5"
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "globals": "^16.3.0",
+    "jsdom": "^26.1.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-test-renderer": "^19.1.1",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.41.0",
+    "vitest": "^3.2.4"
   }
 }

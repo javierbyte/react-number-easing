@@ -2,8 +2,8 @@ name: Deploy
 
 # Builds the Next.js static export in website/ and publishes it to the gh-pages
 # branch, which is what javier.xyz/react-number-easing rewrites to via
-# javierbyte.github.io/react-number-easing. The library itself is published to npm by
-# hand and is not touched here.
+# javierbyte.github.io/react-number-easing. Package publishing is handled by the
+# separate publish workflow; this site keeps a manually updated, exact npm version.
 on:
   push:
     branches: [main, master]
@@ -34,7 +34,15 @@ jobs:
         with:
           node-version-file: website/.nvmrc
           cache: pnpm
-          cache-dependency-path: website/pnpm-lock.yaml
+          cache-dependency-path: |
+            pnpm-lock.yaml
+            website/pnpm-lock.yaml
+
+      - run: pnpm install --frozen-lockfile
+        working-directory: .
+
+      - run: pnpm build
+        working-directory: .
 
       - run: pnpm install --frozen-lockfile
 

@@ -3,6 +3,10 @@
 The demo site for [react-number-easing](https://javier.xyz/react-number-easing),
 built with Next.js and JBX.
 
+The demo intentionally pins an exact published `react-number-easing` version.
+Update that version and the lockfile manually after an npm release; do not use a
+workspace, `file:`, or semver-range dependency here.
+
 ```sh
 pnpm install
 pnpm dev

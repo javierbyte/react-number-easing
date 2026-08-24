@@ -1,40 +1,17 @@
-/**
- * Definition types
- */
-declare module 'react-number-easing' {
-  import * as React from 'react'
-
-  // Referenced from @types/eases
-  type TEaseTypes = 'backInOut' | 'backIn' | 'backOut' | 'bounceInOut' | 'bounceIn' | 'bounceOut' | 'circInOut' | 'circIn' | 'circOut' | 'cubicInOut' | 'cubicIn' | 'cubicOut' | 'elasticInOut' | 'elasticIn' | 'elasticOut' | 'expoInOut' | 'expoIn' | 'expoOut' | 'linear' | 'quadInOut' | 'quadIn' | 'quadOut' | 'quartInOut' | 'quartIn' | 'quartOut' | 'quintInOut' | 'quintIn' | 'quintOut' | 'sineInOut' | 'sineIn' | 'sineOut'
-
-  export interface NumberEasingProps {
-    /**
-     * The value that you want to display at the end of the animation. This is the target value.
-     */
-    value: number,
-    /**
-     * How fast do you want to finish the animation?
-     * @default 500
-     */
-    speed?: number,
-    /**
-     * The easing equation for the animation.
-     * @default 'quintInOut'
-     */
-    ease?: TEaseTypes,
-    /**
-     * Decimals number
-     * @default 0
-     */
-    decimals?: number,
-    /**
-     * Function that replaces the default `Number(value).toString(decimals)` render function.
-     * @default undefined
-     */
-    customFunctionRender?: (value: number, decimals: number) => string,
-  }
-
-  const NumberEasing: React.FC<NumberEasingProps>
-
-  export default NumberEasing
+import { type ReactElement, type ReactNode } from 'react';
+export type TEaseTypes = 'backInOut' | 'backIn' | 'backOut' | 'bounceInOut' | 'bounceIn' | 'bounceOut' | 'circInOut' | 'circIn' | 'circOut' | 'cubicInOut' | 'cubicIn' | 'cubicOut' | 'elasticInOut' | 'elasticIn' | 'elasticOut' | 'expoInOut' | 'expoIn' | 'expoOut' | 'linear' | 'quadInOut' | 'quadIn' | 'quadOut' | 'quartInOut' | 'quartIn' | 'quartOut' | 'quintInOut' | 'quintIn' | 'quintOut' | 'sineInOut' | 'sineIn' | 'sineOut';
+export type EaseName = TEaseTypes;
+export interface NumberEasingProps {
+    /** The target value displayed at the end of the animation. */
+    value: number;
+    /** Animation duration in milliseconds. @default 500 */
+    speed?: number;
+    /** Easing equation used for the animation. @default 'quintInOut' */
+    ease?: TEaseTypes;
+    /** Number of decimal places to display. @default 0 */
+    decimals?: number;
+    /** Replaces the default `Number(value).toFixed(decimals)` renderer. */
+    customFunctionRender?: (value: number, decimals: number) => ReactNode;
 }
+declare function NumberEasing({ value, speed, decimals, customFunctionRender, ease, }: NumberEasingProps): ReactElement;
+export default NumberEasing;

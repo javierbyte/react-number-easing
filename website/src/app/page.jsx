@@ -1,6 +1,7 @@
 import { MainHeader, Text, Space, Container, A, MoreExperiments } from 'jbx';
 
 import NumberEasingApp from '@/components/NumberEasingApp.jsx';
+import PublishedNumberEasing from '@/components/PublishedNumberEasing.jsx';
 
 export default function Page() {
   return (
@@ -23,7 +24,7 @@ export default function Page() {
       <Space h={2} />
       <Text>
         Made by <A href="https://javier.xyz">Javier Bórquez</A>. Online since
-        2015.
+        {' '}<PublishedNumberEasing value={2015} />.
       </Text>
     </Container>
   );
