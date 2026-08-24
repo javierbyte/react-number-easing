@@ -24,8 +24,8 @@ importers:
         specifier: ^19.2.8
         version: 19.2.8(react@19.2.8)
       react-number-easing:
-        specifier: 1.0.2
-        version: 1.0.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+        specifier: 1.1.0
+        version: 1.1.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
 
 packages:
 
@@ -320,11 +320,11 @@ packages:
     peerDependencies:
       react: ^19.2.8
 
-  react-number-easing@1.0.2:
-    resolution: {integrity: sha512-md5vahNBxXv9EFMt/V+YO5ojwSxf3kcgL6Bxe1ZIGUgK9CaO5OCGYG/s6nBf8GhQNKAIJ8wySEo2nlT5v8YZZQ==}
+  react-number-easing@1.1.0:
+    resolution: {integrity: sha512-LDC1hV6WA1Bzyyyzwb77jay/+lQraLBgKp9Vtv1aomPiq1/aBC9qt+KJ+AAEbUYdY7Oq7I/Ppz7IW1AU6olH/Q==}
     peerDependencies:
-      react: ^17.0.1
-      react-dom: ^17.0.1
+      react: '>=17 <20'
+      react-dom: '>=17 <20'
 
   react@19.2.8:
     resolution: {integrity: sha512-PWaYA1L/q9u2u7xYQi+Y3L3Yfnie7XyLeaJICV1MGD6LprsBxcAqGjYyr0eY3p+QdsA+x/Irkt4Qif8D63+Sbw==}
@@ -575,7 +575,7 @@ snapshots:
       react: 19.2.8
       scheduler: 0.27.0
 
-  react-number-easing@1.0.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
+  react-number-easing@1.1.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
     dependencies:
       eases: 1.0.8
       react: 19.2.8

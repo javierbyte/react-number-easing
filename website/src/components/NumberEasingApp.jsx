@@ -37,7 +37,18 @@ export default function NumberEasingApp() {
   const [currentEasing, currentEasingSet] = useState('quintInOut');
 
   function onRandomizeTarget() {
-    targetSet(Math.floor(Math.random() * 1024));
+    targetSet((currentTarget) => {
+      const nextTarget = Math.floor(Math.random() * 1024);
+
+      return nextTarget === currentTarget ? (nextTarget + 1) % 1024 : nextTarget;
+    });
+  }
+
+  function onEasingChange(easing) {
+    if (easing === currentEasing) return;
+
+    currentEasingSet(easing);
+    onRandomizeTarget();
   }
 
   useEffect(() => {
@@ -88,9 +99,7 @@ export default function NumberEasingApp() {
             <Tab
               active={currentEasing === easing}
               key={easing}
-              onClick={() => {
-                currentEasingSet(easing);
-              }}
+              onClick={() => onEasingChange(easing)}
             >
               <Text>{easing}</Text>
             </Tab>
@@ -99,17 +108,29 @@ export default function NumberEasingApp() {
       </Tabs>
 
       <Space h={1} />
-      <CodeSnippet>
-        <code>
-          {`import NumberEasing from 'react-number-easing';
+      <div className="code-examples">
+        <section className="code-example">
+          <Text className="code-example-title">Install</Text>
+          <CodeSnippet>
+            <code>npm install react-number-easing</code>
+          </CodeSnippet>
+        </section>
+
+        <section className="code-example">
+          <Text className="code-example-title">Example</Text>
+          <CodeSnippet>
+            <code>
+              {`import NumberEasing from 'react-number-easing';
 
 /* Example */
 <NumberEasing
   value={${target}}
   speed={1000}
   ease='${currentEasing}' />`}
-        </code>
-      </CodeSnippet>
+            </code>
+          </CodeSnippet>
+        </section>
+      </div>
     </>
   );
 }

@@ -40,7 +40,16 @@ jobs:
           package_name=$(node -p "require('./package.json').name")
           package_version=$(node -p "require('./package.json').version")
 
-          if pnpm view "${package_name}@${package_version}" version >/dev/null 2>&1; then
+          if ! published_versions=$(npm view "$package_name" versions --json); then
+            echo "### Could not verify published versions for ${package_name}; refusing to publish" >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+
+          if node -e '
+            const published = JSON.parse(process.argv[1]);
+            const versions = Array.isArray(published) ? published : [published];
+            process.exit(versions.includes(process.argv[2]) ? 0 : 1);
+          ' "$published_versions" "$package_version"; then
             echo "publish=false" >> "$GITHUB_OUTPUT"
             echo "### ${package_name}@${package_version} is already published" >> "$GITHUB_STEP_SUMMARY"
           else

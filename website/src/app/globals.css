@@ -2,6 +2,28 @@
   --accent-color: #95a5a6;
 }
 
+.code-examples {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: var(--size);
+}
+
+.code-example {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.code-example-title {
+  margin-bottom: calc(var(--size) * 0.5);
+  font-weight: 600;
+}
+
+.code-example .jbx-code-snippet {
+  flex: 1;
+  overflow-x: auto;
+}
+
 .github-corner {
   z-index: 10;
   position: absolute;
@@ -29,6 +51,10 @@
 }
 
 @media (max-width: 500px) {
+  .code-examples {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .github-corner:hover .octo-arm {
     animation: none;
   }
