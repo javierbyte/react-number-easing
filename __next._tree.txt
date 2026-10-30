@@ -1,2 +1,3 @@
-:HL["/react-number-easing/_next/static/chunks/0aqfx1i1w_cti.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"GdmTnJGx-nbDhr_S_5M6p"}
+:HL["/react-number-easing/_next/static/chunks/1x-wstowje05g.css","style"]
+1:[["children",{"s":"__PAGE__","h":160}]]
+0:{"b":"LRkAXJqIbwwEtFftdGICA","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
