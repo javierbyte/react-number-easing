@@ -1,13 +1,12 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "..",
     "esModuleInterop": true,
     "jsx": "react-jsx",
     "lib": ["ES2020", "DOM"],
     "noEmit": true,
     "paths": {
-      "react-number-easing": ["./src/index.d.ts"]
+      "react-number-easing": ["../src/index.d.ts"]
     },
     "skipLibCheck": false,
     "strict": true,

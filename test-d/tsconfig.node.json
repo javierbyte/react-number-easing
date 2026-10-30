@@ -1,6 +1,8 @@
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
+    // Keep checking declarations for consumers using legacy Node resolution.
+    "ignoreDeprecations": "6.0",
     "module": "ESNext",
     "moduleResolution": "Node"
   }
